@@ -36,7 +36,6 @@ public class Tugas {
 
             if (nama.equals("Akhmad Arjuan Syuhada") && nim == 202410370110043L) {
                 System.out.println("Login Mahasiswa Berhasil");
-                scanner.close();
 
                 System.out.println("Nama: " + nama);
                 System.out.println("NIM: " + nim);
