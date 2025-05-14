@@ -1,51 +1,53 @@
+package Tugas.Tugas_PBO.com.praktikum.main;
+
+import Tugas.Tugas_PBO.com.praktikum.users.Admin;
+import Tugas.Tugas_PBO.com.praktikum.users.Mahasiswa;
+import Tugas.Tugas_PBO.com.praktikum.users.User;
+
 import java.util.Scanner;
 
 public class LoginSystem {
-    Admin admin;
-    Mahasiswa mahasiswa;
 
-    public LoginSystem() {
-        admin = new Admin();
-        mahasiswa = new Mahasiswa();
-    }
+        User user1 = new Admin();
+        User user2 = new Mahasiswa();
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=== Sistem Login ===");
+        System.out.println("   Sistem Login   ");
         System.out.println("1. Login sebagai Admin");
         System.out.println("2. Login sebagai Mahasiswa");
-        System.out.print("Pilih opsi (1/2): ");
+        System.out.print("Pilihan login: ");
         String pilihan = scanner.nextLine();
 
         if (pilihan.equals("1")) {
             System.out.print("Masukkan Username: ");
-            String username = scanner.nextLine();
+            String usernameInput = scanner.nextLine();
             System.out.print("Masukkan Password: ");
-            String password = scanner.nextLine();
+            String passwordInput = scanner.nextLine();
 
-            boolean berhasil = admin.login(username, password);
+            boolean berhasil = user1.login(usernameInput, passwordInput);
             if (berhasil) {
-                System.out.println("\nLogin Admin berhasil!");
-
+                user1.displayInfo();
+                user1.displayAppMenu();
             } else {
                 System.out.println("\nLogin Admin gagal! Username atau password salah.");
             }
 
         } else if (pilihan.equals("2")) {
             System.out.print("Masukkan Nama: ");
-            String nama = scanner.nextLine();
+            String namaInput = scanner.nextLine();
             System.out.print("Masukkan NIM: ");
-            String nim = scanner.nextLine();
+            String nimInput = scanner.nextLine();
 
-            boolean berhasil = mahasiswa.login(nama, nim);
+            boolean berhasil = user2.login(namaInput, nimInput);
             if (berhasil) {
-                System.out.println("\nLogin Mahasiswa berhasil!");
-                mahasiswa.displayInfo();
+                user2.displayInfo();
+                System.out.println();
+                user2.displayAppMenu();
             } else {
                 System.out.println("\nLogin Mahasiswa gagal! Nama atau NIM salah.");
             }
-
         } else {
             System.out.println("Pilihan tidak valid! Harap pilih 1 atau 2.");
         }
@@ -53,8 +55,9 @@ public class LoginSystem {
         scanner.close();
     }
 
-    public static void main(String[] args) {
+    public static void main (String[] args){
         LoginSystem system = new LoginSystem();
         system.run();
     }
+
 }

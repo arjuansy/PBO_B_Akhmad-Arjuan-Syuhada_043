@@ -44,7 +44,7 @@ public class JavaProject3 {
             double totalHarta = angkaDesimal1 + angkaDesimal2;
 
             System.out.println("Di kota " + kota + ", hiduplah seseorang bernama " + nama + ".");
-            System.out.println(nama + " sangat suka " + kataKerja + " dan hobinya main game " + game + ".");
+            System.out.println(nama + " sangat suka " + kataKerja + " dan hobinya MainSystem game " + game + ".");
             System.out.println("Orang-orang mengenalnya memiliki sifat yang " + kataSifat + ".");
             System.out.println("Suatu hari, " + nama + " bermimpi ramalan yang mengatakan:");
             System.out.println("\"Dalam " + tahun + " tahun, kamu akan menjadi atlet profesional game di " + kota + "!\"");
